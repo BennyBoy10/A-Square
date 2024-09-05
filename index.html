@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="FAVICON.png">
+    <link rel="stylesheet" href="Style.css">
+
+    <title>Page title</title>
+    
+    <style>
+
+
+
+    </style>
+    
+</head>
+<body>
+         <div class="container">
+  <header>
+<img src="Images/Three-Stripes.jpg" id="Three-Stripes">
+<img src="Images/G2a-Logo.jpg" id="gta-logo">
+<p id="en-usd">EN / USD</p>
+<img src="Images/Search-icon.jpg" id="Search-icon">
+<img src="Images/Account-icon.jpg" id="Account-icon">
+<img src="Images/Shopping-cart-icon.jpg" id="Cart-icon">
+  </header>
+
+  <div class="top1">
+<br>
+<p id="top1-p">G2A &nbsp;>&nbsp; Gaming &nbsp;>&nbsp; Gaming Gift Cards &nbsp;>&nbsp; Razer Gold</p>
+<br>
+<h3 id="razer-price">Razer Gold <span id="amount1">25</span> USD - Razer Key - GLOBAL</h3>
+<img src="Images/Razer1.png" id="Razer1">
+<br><br>
+
+  <div class="choose-variant">
+<p id="choose-variant">CHOOSE VARIANT</p>
+  <div class="platform-razer">
+<img src="Images/Platform-Razer.jpg" id="Platform-Razer-img">
+<p id="Platform-Razer"><span class="light">Platform:</span> Razer</p>
+  </div>
+  <div class="type-key">
+<img src="Images/Type-Key.jpg" id="Type-Key-img">
+<p id="Type-Key"><span class="light">Type:</span> Key</p>
+  </div>
+
+<p id="versions">Versions</p>
+  <select id="allVersions">  
+<option value="Global">GLOBAL</option>
+<option value="Australia">AUSTRALIA</option>
+<option value="Brazil">BRAZIL</option>
+<option value="Canada">CANADA</option>
+  </select>
+
+  <p id="input-amount">Amount</p>
+  <select id="allInputAmount">  
+<option value="25">25 USD</option>
+<option value="10">10 USD</option>
+<option value="15">15 USD</option>
+<option value="20">20 USD</option>
+<option value="30">30 USD</option>
+<option value="35">35 USD</option>
+<option value="40">40 USD</option>
+<option value="50">50 USD</option>
+<option value="55">55 USD</option>
+<option value="60">60 USD</option>
+<option value="80">80 USD</option>
+<option value="100">100 USD</option>
+  </select>
+
+<p id="how-to-activate">How to activate <span id="check-activation-guide">Check activation guide</span></p>
+
+  </div>
+
+  
+<hr>
+  </div>
+
+
+
+
+
+
+
+<br><br>
+
+     </div>
+    
+    
+  <script>
+
+  localStorage.setItem("amount", "25")
+  var Amount = localStorage.getItem("amount")
+  var Amount1 = document.getElementById("amount1");
+
+  Amount1.textContent = `${Amount}`;
+
+
+  </script>
+
+
+</body>
+</html>
