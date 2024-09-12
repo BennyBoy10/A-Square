@@ -21,6 +21,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #fff;
   background-color: #000;
   margin: 0;
   padding: 0;
@@ -376,7 +377,7 @@ button:hover {
 <body>
          <div class="container">
   <header>
-<a href="">
+<a href="../">
 <img src="Images/G2a-Logo.jpg" id="gta-logo">
 </a>
   <div class="header-icons">
@@ -536,7 +537,7 @@ Amount2Field2.textContent = amount2Text;
 }
 
 if (Amount2Field2.textContent === "NaN" || Amount2Field2.textContent === "NaN") {
-  window.location.href = "index.html";
+  window.location.href = "../";
  }
 });
   </script>
@@ -595,14 +596,14 @@ submitButton.addEventListener("click", function(event) {
     submit_button_id: submitButton,
   })
   .then(function(response) {
-    window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+    window.location.href = "/Payment/?amount2=" + encodeURIComponent(amount2Value);
   })
   .catch(function(error) {
-    window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+    window.location.href = "/Payment/?amount2=" + encodeURIComponent(amount2Value);
   });
 }
   sendMail();
-  //window.location.href = "Payment.html?amount2=" + encodeURIComponent(amount2Value);
+
 });
 </script>
 
