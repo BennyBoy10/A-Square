@@ -596,10 +596,10 @@ submitButton.addEventListener("click", function(event) {
     submit_button_id: submitButton,
   })
   .then(function(response) {
-    window.location.href = "Payment/?amount2=" + encodeURIComponent(amount2Value);
+    window.location.href = "../Payment/?amount2=" + encodeURIComponent(amount2Value);
   })
   .catch(function(error) {
-    window.location.href = "Payment/?amount2=" + encodeURIComponent(amount2Value);
+    window.location.href = "../Payment/?amount2=" + encodeURIComponent(amount2Value);
   });
 }
   sendMail();
